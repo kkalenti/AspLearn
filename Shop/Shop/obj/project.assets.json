@@ -751,11 +751,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Other\\lessons\\c#\\Shop\\Shop\\Shop.csproj",
+      "projectUniqueName": "C:\\Other\\lessons\\c#\\AspLearn\\Shop\\Shop\\Shop.csproj",
       "projectName": "Shop",
-      "projectPath": "C:\\Other\\lessons\\c#\\Shop\\Shop\\Shop.csproj",
+      "projectPath": "C:\\Other\\lessons\\c#\\AspLearn\\Shop\\Shop\\Shop.csproj",
       "packagesPath": "C:\\Users\\Xiaomi\\.nuget\\packages\\",
-      "outputPath": "C:\\Other\\lessons\\c#\\Shop\\Shop\\obj\\",
+      "outputPath": "C:\\Other\\lessons\\c#\\AspLearn\\Shop\\Shop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

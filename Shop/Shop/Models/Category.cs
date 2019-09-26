@@ -1,4 +1,6 @@
-﻿namespace Shop.Models
+﻿using System.Collections.Generic;
+
+namespace Shop.Models
 {
     public class Category
     {
@@ -17,7 +19,10 @@
         /// </summary>
         public string Description { get; set; }
 
-       //public int Id { get; set; }
+        /// <summary>
+        /// Список машин входящих в категорию
+        /// </summary>
+        public List<Car> CarList { get; set; }
 
 
     }
