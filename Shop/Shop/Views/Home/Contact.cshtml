@@ -1,0 +1,18 @@
+﻿@using Shop.ViewModels
+@model ContactViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+
+<h1>@ViewBag.Contact</h1>
+@{
+    <div>
+        <p>Адресс: @Model.Contacts.Address</p>
+        <p>Почтовый ящик: @Model.Contacts.Mail</p>
+        <p>Номер телефона: @Model.Contacts.Phone</p>
+    </div>
+}
