@@ -10,19 +10,10 @@ namespace Shop.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IContacts _contacts;
-
-        public HomeController(IContacts contacts)
-        {
-            _contacts = contacts;
-        }
-
         public IActionResult Contact()
         {
             ViewBag.Title = "Контакты";
-            ViewBag.Contact = "Наши контакты:";
-            var contactView = new ContactViewModel {Contacts = _contacts.Contact};
-            return View(contactView);
+            return View();
         }
 
         //public IActionResult Index()

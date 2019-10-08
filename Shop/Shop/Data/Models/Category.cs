@@ -2,6 +2,9 @@
 
 namespace Shop.Data.Models
 {
+    /// <summary>
+    /// Класс для категорий автомобилей
+    /// </summary>
     public class Category
     {
         /// <summary>
@@ -18,11 +21,6 @@ namespace Shop.Data.Models
         /// Описание категории
         /// </summary>
         public string Description { get; set; }
-
-        /// <summary>
-        /// Список машин входящих в категорию
-        /// </summary>
-        public List<Car> CarList { get; set; }
 
 
     }

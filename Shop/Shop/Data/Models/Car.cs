@@ -1,5 +1,8 @@
 ﻿namespace Shop.Data.Models
 {
+    /// <summary>
+    /// Класс для автомобилей
+    /// </summary>
     public class Car
     {
         /// <summary>

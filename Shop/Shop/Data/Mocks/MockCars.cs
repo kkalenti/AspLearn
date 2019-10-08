@@ -5,10 +5,16 @@ using Shop.Data.Models;
 
 namespace Shop.Data.Mocks
 {
+    /// <summary>
+    /// Заглушка для автомобилей
+    /// </summary>
     public class MockCars : ICars
     {
         private readonly ICarsCategory _category = new MockCategory();
 
+        /// <summary>
+        /// Инициализируем список автомобилей
+        /// </summary>
         public IEnumerable<Car> AllCars
         {
             get
@@ -69,7 +75,7 @@ namespace Shop.Data.Mocks
             }
         }
 
-        public IEnumerable<Car> FavouriteCars { get; set; }
+        public IEnumerable<Car> FavoriteCars { get; set; }
 
         public Car GetCar(int carId)
         {

@@ -4,8 +4,14 @@ using Shop.Data.Models;
 
 namespace Shop.Data.Mocks
 {
+    /// <summary>
+    /// Заглушка для категорий
+    /// </summary>
     public class MockCategory : ICarsCategory
     {
+        /// <summary>
+        /// Инициализируем категории
+        /// </summary>
         public IEnumerable<Category> AllCategories =>
             new List<Category>
             {

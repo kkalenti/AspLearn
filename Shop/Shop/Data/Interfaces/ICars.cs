@@ -13,7 +13,7 @@ namespace Shop.Data.Interfaces
         /// <summary>
         /// Все избранные автомобили
         /// </summary>
-        IEnumerable<Car> FavouriteCars { get; set; }
+        IEnumerable<Car> FavoriteCars { get; /*set;*/ }
 
         /// <summary>
         /// Возвращает объект автомобиля по его Id

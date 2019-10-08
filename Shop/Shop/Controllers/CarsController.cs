@@ -23,9 +23,7 @@ namespace Shop.Controllers
         public IActionResult List()
         {
             ViewBag.Title = "Страница с автомобилями";
-            var carList = new CarsListViewModel();
-            carList.AllCars = _allCars.AllCars;
-            carList.CurrentCategory = "Автомобили";
+            var carList = new CarsListViewModel {AllCars = _allCars.AllCars, CurrentCategory = "Автомобили"};
             return View(carList);
         }
     }
