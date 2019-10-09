@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Shop.Data;
 using Shop.Data.Interfaces;
 using Shop.Data.Mocks;
+using Shop.Data.Models;
 using Shop.Data.Repository;
 
 namespace Shop
@@ -34,7 +35,12 @@ namespace Shop
                 options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICars, CarRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShopCart.GetCart(sp));
+
             services.AddMvc(option => option.EnableEndpointRouting = false);
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +49,7 @@ namespace Shop
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
             app.UseMvcWithDefaultRoute();
 
             using (var scope = app.ApplicationServices.CreateScope())

@@ -114,7 +114,7 @@ namespace Shop.Data
                         Price = 14000,
                         IsFavourite = true,
                         IsAvailable = true,
-                        Category = Categories["Классические автомобили"]
+                        Category = Categories["Электромобили"]
                     }
                     };
 

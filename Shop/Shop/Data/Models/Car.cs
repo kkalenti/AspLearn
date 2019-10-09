@@ -50,6 +50,9 @@
         /// </summary>
         public int CategoryId { get; set; }
 
+        /// <summary>
+        /// Сама категория
+        /// </summary>
         public virtual Category Category { get; set; }
 
 

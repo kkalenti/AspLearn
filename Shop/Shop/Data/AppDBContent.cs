@@ -5,7 +5,7 @@ namespace Shop.Data
 {
     public class AppDbContent : DbContext
     {
-        public AppDbContent(DbContextOptions<AppDbContent> options) : base(options)
+        public AppDbContent(DbContextOptions options) : base(options)
         {
             
         }
@@ -14,6 +14,6 @@ namespace Shop.Data
 
         public DbSet<Category> Categories { get; set; }
 
-
+        public DbSet<ShopCartItem>  ShopCartItems { get; set; }
     }
 }

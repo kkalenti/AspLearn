@@ -1,0 +1,19 @@
+﻿@model Shop.ViewModels.ShopCartViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<div class="container">
+    @foreach (var item in Model.ShopCart.ShopItems)
+    {
+        <div class="alert alert-warning mt-3">
+            <b>Автомобиль:</b> @item.Car.Name <br />
+            <b>Цена:</b> @item.Car.Price
+        </div>
+    }
+    <hr />
+    <div class="btn btn-danger" asp-controller = "Order">Оплатить</div>
+</div>
