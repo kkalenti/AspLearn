@@ -11,6 +11,7 @@ namespace Shop.Data
     {
         public static void Initial(AppDbContent content)
         {
+
             if (!content.Categories.Any())
             {
                 content.Categories.AddRange(Categories.Select(c => c.Value));

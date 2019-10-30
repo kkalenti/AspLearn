@@ -7,32 +7,29 @@ namespace Shop.Controllers
 {
     public class CartController : Controller
     {
-        private readonly ICars _car;
+        private readonly ICars _cars;
 
         private readonly ShopCart _shopCart;
 
-        public CartController(ICars car, ShopCart shopCart)
+        public CartController(ICars cars, ShopCart shopCart)
         {
-            _car = car;
+            _cars = cars;
             _shopCart = shopCart;
         }
 
         public IActionResult Index()
         {
-            var items = _shopCart.GetShopItems();
-            _shopCart.ShopItems = items;
-
-            var ShopCart  = new ShopCartViewModel()
+            var shopCart  = new ShopCartViewModel()
             {
                 ShopCart = _shopCart
             };
 
-            return View(ShopCart);
+            return View(shopCart);
         }
 
         public RedirectToActionResult AddToCart(int id)
         {
-            var item = _car.GetCar(id);
+            var item = _cars.GetCar(id);
 
             if (item != null)
             {

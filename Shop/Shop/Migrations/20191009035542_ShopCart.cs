@@ -13,8 +13,7 @@ namespace Shop.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ShopCartId = table.Column<string>(nullable: true),
-                    CarId = table.Column<int>(nullable: true),
-                    Price = table.Column<int>(nullable: false)
+                    CarId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {

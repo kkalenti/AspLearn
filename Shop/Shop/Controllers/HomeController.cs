@@ -10,15 +10,26 @@ namespace Shop.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ICars _cars;
+
+        public HomeController(ICars cars)
+        {
+            _cars = cars;
+        }
+
         public IActionResult Contact()
         {
             ViewBag.Title = "Контакты";
             return View();
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+        public IActionResult Index()
+        {
+            var home = new HomeViewModel
+            {
+                FavoriteCars = _cars.FavoriteCars
+            };
+            return View(home);
+        }
     }
 }

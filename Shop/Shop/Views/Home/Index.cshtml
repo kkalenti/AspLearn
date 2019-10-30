@@ -1,0 +1,19 @@
+﻿@model Shop.ViewModels.HomeViewModel 
+
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<h3>Избранное</h3>
+
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var car in Model.FavoriteCars)
+        {
+            @Html.Partial("CarElement",car)
+        }
+    }
+</div>

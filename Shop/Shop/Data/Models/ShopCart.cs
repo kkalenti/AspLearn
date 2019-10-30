@@ -18,9 +18,14 @@ namespace Shop.Data.Models
 
         public string Id { get; set; }
 
-        private List<ShopCartItem> _shopItem;
-
-        public List<ShopCartItem> ShopItems { get; set; }
+        public List<ShopCartItem> ShopItems
+        {
+            get
+            {
+                return _dbContent.ShopCartItems.Where(c => c.ShopCartId == Id).
+                    Include(s => s.Car).ToList();
+            }
+        }
 
         public static ShopCart GetCart(IServiceProvider service)
         {
@@ -45,12 +50,6 @@ namespace Shop.Data.Models
             });
 
             _dbContent.SaveChanges();
-        }
-
-        public List<ShopCartItem> GetShopItems()
-        {
-            return _dbContent.ShopCartItems.Where(c => c.ShopCartId == Id).
-                Include(s => s.Car).ToList();
         }
     }
 }

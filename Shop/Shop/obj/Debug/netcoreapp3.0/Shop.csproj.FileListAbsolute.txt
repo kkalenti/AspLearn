@@ -155,5 +155,8 @@ C:\Other\lessons\c#\AspLearn\Shop\Shop\obj\Debug\netcoreapp3.0\Razor\Views\Home\
 C:\Other\lessons\c#\AspLearn\Shop\Shop\bin\Debug\netcoreapp3.0\dbsettings.json
 C:\Other\lessons\c#\AspLearn\Shop\Shop\bin\Debug\netcoreapp3.0\Json.dll
 C:\Other\lessons\c#\AspLearn\Shop\Shop\obj\Debug\netcoreapp3.0\Razor\Views\Shared\CarElement.cshtml.g.cs
-C:\Other\lessons\c#\AspLearn\Shop\Shop\obj\Debug\netcoreapp3.0\Shop.MvcApplicationPartsAssemblyInfo.cache
 C:\Other\lessons\c#\AspLearn\Shop\Shop\obj\Debug\netcoreapp3.0\Razor\Views\Cart\Index.cshtml.g.cs
+C:\Other\lessons\c#\AspLearn\Shop\Shop\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Other\lessons\c#\AspLearn\Shop\Shop\obj\Debug\netcoreapp3.0\Shop.MvcApplicationPartsAssemblyInfo.cache
+C:\Other\lessons\c#\AspLearn\Shop\Shop\obj\Debug\netcoreapp3.0\Razor\Views\Order\Checkout.cshtml.g.cs
+C:\Other\lessons\c#\AspLearn\Shop\Shop\obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs

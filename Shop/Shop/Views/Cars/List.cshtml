@@ -1,11 +1,8 @@
-﻿@using Shop.ViewModels
-@model CarsListViewModel
+﻿@model Shop.ViewModels.CarsListViewModel
 
 @{
     Layout = "_Layout";
 }
-
-<!DOCTYPE html>
 
 <h2>Все автомобили</h2>
 <h3>@Model.CurrentCategory</h3>
@@ -13,7 +10,7 @@
     @{
         foreach (var car in Model.AllCars)
         {
-            @Html.Partial("CarElement",car)
+            @Html.Partial("CarElement", car)
         }
     }
 </div>
