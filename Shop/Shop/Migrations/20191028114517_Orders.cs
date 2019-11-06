@@ -7,10 +7,6 @@ namespace Shop.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Price",
-                table: "ShopCartItems");
-
             migrationBuilder.CreateTable(
                 name: "Order",
                 columns: table => new

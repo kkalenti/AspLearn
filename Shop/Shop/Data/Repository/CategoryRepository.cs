@@ -6,13 +6,13 @@ namespace Shop.Data.Repository
 {
     public class CategoryRepository : ICarsCategory
     {
-        private readonly AppDbContent _dbContent;
+        private readonly AppDbContext _dbContext;
 
-        public CategoryRepository(AppDbContent appDbContent)
+        public CategoryRepository(AppDbContext appDbContext)
         {
-            _dbContent = appDbContent;
+            _dbContext = appDbContext;
         }
 
-        public IEnumerable<Category> AllCategories => _dbContent.Categories;
+        public IEnumerable<Category> AllCategories => _dbContext.Categories;
     }
 }

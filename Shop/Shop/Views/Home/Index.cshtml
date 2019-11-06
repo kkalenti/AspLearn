@@ -1,4 +1,4 @@
-﻿@model Shop.ViewModels.HomeViewModel 
+﻿@model Shop.ViewModels.HomeViewModel
 
 
 @{
@@ -7,13 +7,13 @@
 
 <!DOCTYPE html>
 
-<h3>Избранное</h3>
+<h3>Популярное</h3>
 
-<div class="row mt-5 mb-2">
+<div class="row mt-5 mb-2 ">
     @{
         foreach (var car in Model.FavoriteCars)
         {
-            @Html.Partial("CarElement",car)
+            @Html.Partial("CarElement", car)
         }
     }
 </div>

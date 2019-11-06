@@ -38,5 +38,12 @@ namespace Shop.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public RedirectToActionResult DeleteFromCart(int id)
+        {
+            _shopCart.DeleteFromCart(id);
+
+            return RedirectToAction("Index");
+        }
     }
 }                             

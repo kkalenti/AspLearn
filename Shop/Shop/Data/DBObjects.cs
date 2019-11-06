@@ -9,26 +9,35 @@ namespace Shop.Data
 {
     public class DbObjects
     {
-        public static void Initial(AppDbContent content)
+        /// <summary>
+        /// Метод инициализирует данные в базе данных
+        /// </summary>
+        /// <param name="context">Контекст базы данных</param>
+        public static void Initial(AppDbContext context)
         {
 
-            if (!content.Categories.Any())
+            if (!context.Categories.Any())
             {
-                content.Categories.AddRange(Categories.Select(c => c.Value));
+                context.Categories.AddRange(Categories.Select(c => c.Value));
             }
 
-            if (!content.Cars.Any())
+            if (!context.Cars.Any())
             {
-                content.Cars.AddRange(Cars.Select(c => c.Value));
+                context.Cars.AddRange(Cars.Select(c => c.Value));
             }
 
-            content.SaveChanges();
+            context.SaveChanges();
         }
 
         
-
+        /// <summary>
+        /// Словарь хранит список категорий
+        /// </summary>
         private static Dictionary<string, Category> _category;
 
+        /// <summary>
+        /// Создает список категорий автомобилей
+        /// </summary>
         public static Dictionary<string, Category> Categories
         {
             get
@@ -57,8 +66,14 @@ namespace Shop.Data
             }
         }
 
+        /// <summary>
+        /// Словарь хранит список автомобилей
+        /// </summary>
         private static Dictionary<string, Car> _car;
 
+        /// <summary>
+        /// Создает список автомобилей
+        /// </summary>
         public static Dictionary<string, Car> Cars
         {
             get

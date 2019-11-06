@@ -21,3 +21,9 @@ html {
 }
 .pt2 { padding-top:20px ; margin-bottom:20px ;}
 footer p { font-size:13px; color:#CCC; padding-bottom:8px; margin-bottom:8px; }
+
+.delete-item {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+}

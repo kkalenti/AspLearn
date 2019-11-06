@@ -6,20 +6,21 @@ namespace Shop.Data.Repository
 {
     public class OrdersRepository:IAllOrders
     {
-        private readonly AppDbContent _appDbContent;
+        private readonly AppDbContext _appDbContext;
 
         private readonly ShopCart _shopCart;
 
-        public OrdersRepository(AppDbContent appDbContent, ShopCart shopCart)
+        public OrdersRepository(AppDbContext appDbContext, ShopCart shopCart)
         {
-            _appDbContent = appDbContent;
+            _appDbContext = appDbContext;
             _shopCart = shopCart;
         }
 
         public void CreateOrder(Order order)
         {
             order.OrderTime = DateTime.Now;
-            _appDbContent.Order.Add(order);
+            _appDbContext.Order.Add(order);
+            _appDbContext.SaveChanges();
 
             var items = _shopCart.ShopItems;
 
@@ -31,10 +32,10 @@ namespace Shop.Data.Repository
                     OrderId = order.Id,
                     Price = item.Car.Price
                 };
-                _appDbContent.OrderDetails.Add(orderDetail);
+                _appDbContext.OrderDetails.Add(orderDetail);
             }
 
-            _appDbContent.SaveChanges();
+            _appDbContext.SaveChanges();
         }
     }
 }

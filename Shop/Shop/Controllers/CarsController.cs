@@ -22,38 +22,37 @@ namespace Shop.Controllers
             _allCategories = allCategories;
         }
 
-        [Route("Cars/List")]
-        [Route("Cars/List/{category}")]
-        public IActionResult List(string category)
+        public IActionResult List()
+        {
+            IEnumerable<Car> cars = _allCars.AllCars.OrderBy(i => i.Id);
+            ViewBag.Title = "Страница с автомобилями";
+
+            var carList = new CarsListViewModel { AllCars = cars };
+            return View(carList);
+        }
+
+        [Route("Cars/Category/{category}")]
+        public IActionResult Category(string category)
         {
             IEnumerable<Car> cars = null;
             string currentCategory = null;
 
-            if (string.IsNullOrEmpty(category))
+            if (string.Equals("electro", category, StringComparison.OrdinalIgnoreCase))
             {
-                cars = _allCars.AllCars.OrderBy(i => i.Id);
-                currentCategory = "";
+                cars = _allCars.AllCars.Where(i => i.Category.CategoryName.Equals("Электромобили"))
+                    .OrderBy(i => i.Id);
+                currentCategory = "Электромобили";
+                ViewBag.Title = "Электромобили";
             }
-            else
+            else if (string.Equals("classic", category, StringComparison.OrdinalIgnoreCase))
             {
-                if (string.Equals("electro", category, StringComparison.OrdinalIgnoreCase))
-                {
-                    cars = _allCars.AllCars.Where(i => i.Category.CategoryName.Equals("Электромобили"))
-                        .OrderBy(i => i.Id);
-                    currentCategory = category;
-                }
-                else if (string.Equals("classic", category, StringComparison.OrdinalIgnoreCase))
-                {
-                    cars = _allCars.AllCars.Where(i => i.Category.CategoryName.Equals("Классические автомобили"))
-                        .OrderBy(i => i.Id);
-                    currentCategory = category;
-                }
-
+                cars = _allCars.AllCars.Where(i => i.Category.CategoryName.Equals("Классические автомобили"))
+                    .OrderBy(i => i.Id);
+                currentCategory = "Классические автомобили";
+                ViewBag.Title = "Классические автомобили";
             }
 
-            ViewBag.Title = "Страница с автомобилями";
-            var carList = new CarsListViewModel { AllCars = cars, CurrentCategory = currentCategory };
-
+            var carList = new CarsListViewModel { AllCars = cars, CurrentCategory = currentCategory};
             return View(carList);
         }
     }

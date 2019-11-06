@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,7 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Shop.Data;
 using Shop.Data.Interfaces;
-using Shop.Data.Mocks;
 using Shop.Data.Models;
 using Shop.Data.Repository;
 
@@ -31,7 +26,7 @@ namespace Shop
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContent>(options =>
+            services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddTransient<ICars, CarRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
@@ -61,7 +56,7 @@ namespace Shop
 
             using (var scope = app.ApplicationServices.CreateScope())
             {
-                var content = scope.ServiceProvider.GetRequiredService<AppDbContent>();
+                var content = scope.ServiceProvider.GetRequiredService<AppDbContext>();
                 DbObjects.Initial(content);
             }
 

@@ -22,6 +22,26 @@ namespace Shop.Controllers
 
         public IActionResult Checkout()
         {
+            if (_shopCart.ShopItems.Count != 0) return View();
+
+            return Redirect("/Cart/");
+
+        }
+
+        [HttpPost]
+        public IActionResult Checkout(Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                _allOrders.CreateOrder(order);
+                return RedirectToAction("Complete");
+            }
+            return View(order);
+        }
+
+        public IActionResult Complete()
+        {
+            ViewBag.Message = "Заказ успешно обработан";
             return View();
         }
     }
