@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=kkalenti.database.windows.net;Database=kkalentiShopDatabase;User Id=kkalenti;Password=k_18032000;"
+  }
+}

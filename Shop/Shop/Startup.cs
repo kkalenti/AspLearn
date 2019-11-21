@@ -28,6 +28,7 @@ namespace Shop
         {
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
+
             services.AddTransient<ICars, CarRepository>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
             services.AddTransient<IAllOrders,OrdersRepository>();

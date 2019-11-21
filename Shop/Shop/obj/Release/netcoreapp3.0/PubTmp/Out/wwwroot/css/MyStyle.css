@@ -1,0 +1,29 @@
+﻿body {
+    background: wheat;
+    min-height: 100%;
+    padding-bottom: 200px;
+    position: relative;
+}
+
+html {
+    height: 100%;
+}
+
+.col_white_amrc { color:#FFF;}
+.footer {
+    position: absolute;
+    width: 100%;
+    background-color: #263238;
+    padding: 10px 0px 10px 0px;
+    margin-top: 40px;
+    bottom: 0;
+    min-height: 180px;
+}
+.pt2 { padding-top:20px ; margin-bottom:20px ;}
+footer p { font-size:13px; color:#CCC; padding-bottom:8px; margin-bottom:8px; }
+
+.delete-item {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+}
